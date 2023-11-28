@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TITLE="Información del sistema"
+
+cat << _EOF_
+
+==== ${TITLE}: $HOSTNAMEI ($USER) ====
+
+Número de cuentas de usuario: $(cat /etc/passwd | cut -d : -f 1 | wc -l)
+PATH=$PATH
+_EOF_
+
+exit 0
